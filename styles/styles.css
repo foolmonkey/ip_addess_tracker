@@ -1,0 +1,22 @@
+/* Variables */
+:root {
+  /* Colors */
+  --grey-darkest: hsl(0, 0%, 17%);
+  --gray-dark: hsl(0, 0%, 59%);
+
+  /* Text Size */
+  --text-input-size: 18px;
+
+  /* Font Family/Weights */
+  --font-family-primary: "Rubik", Arial, Helvetica, sans-serif;
+  --font-weight-light: 400;
+  --font-weight-medium: 500;
+  --font-weight-heavy: 700;
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
