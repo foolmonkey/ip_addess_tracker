@@ -14,8 +14,129 @@
   --font-weight-heavy: 700;
 }
 
+/* Global Styling */
+body {
+  font-family: var(--font-family-primary);
+}
+
+/* Header */
+header {
+  background-color: red;
+}
+
+h1 {
+  font-weight: var(--font-weight-medium);
+  font-size: 28px;
+  text-align: center;
+  padding-top: 25px;
+  color: white;
+}
+
+/* Search Bar */
+#search {
+  display: flex;
+  flex-flow: row nowrap;
+  max-width: 530px;
+  margin: 20px auto;
+}
+
+#search input {
+  border: none;
+  padding: 15px;
+  padding-left: 25px;
+  flex-grow: 1;
+  border-bottom-left-radius: 0.8rem;
+  border-top-left-radius: 0.8rem;
+  color: var(--gray-dark);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-input-size);
+}
+
+#search button {
+  border: none;
+  padding: 15px 20px;
+  background-color: black;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+/* API Info Display */
+.container {
+  background-color: white;
+  width: 78%;
+  min-height: 50px;
+  padding: 20px 0;
+  border-radius: 1rem;
+  margin: 0 auto;
+}
+
+.container ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.container ul li {
+  padding: 0 18px 0 18px;
+  box-sizing: border-box;
+  width: 25%;
+}
+
+.container ul li:not(:last-child) {
+  border-right: 1px solid rgb(204, 204, 204);
+}
+
+.container h2 {
+  color: var(--gray-dark);
+  font-weight: var(--font-weight-heavy);
+  font-size: 14px;
+  font-variant: all-small-caps;
+  padding-bottom: 10px;
+}
+
+.container p {
+  color: var(--grey-darkest);
+  font-weight: var(--font-weight-medium);
+  font-size: 22px;
+}
+
 /* Responsive Media Queries */
 @media only screen and (max-width: 375px) {
+}
+
+@media only screen and (max-width: 768px) {
+  #search {
+    max-width: 90%;
+  }
+
+  .container {
+    padding: 0;
+    width: 90%;
+  }
+
+  .container ul {
+    flex-flow: column wrap;
+    padding: 10px;
+  }
+
+  .container ul li {
+    min-height: 25%;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+  }
+
+  .container ul li:not(:last-child) {
+    border-right: none;
+    padding-bottom: 10px;
+  }
+
+  .container p {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 1440px) {

@@ -20,6 +20,9 @@
 
     <title>Frontend Mentor | IP Address Tracker</title>
 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -37,7 +40,7 @@
       <h1>IP Address Tracker</h1>
 
       <!-- Search Bar -->
-      <div id="search-container">
+      <div id="search">
         <input type="text" placeholder="Search for any IP address or domain" />
         <button type="button">
           <img src="images\icon-arrow.svg" alt="OK" />
@@ -47,16 +50,25 @@
       <!-- API Info Display -->
       <section class="container">
         <ul>
-          <li>IP Address</li>
-          <li>Location</li>
-          <li>Timezone</li>
-          <li>ISP</li>
+          <li>
+            <h2>IP Address</h2>
+            <p id="ip">192.212.174.101</p>
+          </li>
+          <li>
+            <h2>Location</h2>
+            <p id="location">Brooklyn, NY 10001</p>
+          </li>
+          <li>
+            <h2>Timezone</h2>
+            <p id="timezone">UTC -05:00</p>
+          </li>
+          <li>
+            <h2>ISP</h2>
+            <p id="isp">SpaceX Starlink</p>
+          </li>
         </ul>
       </section>
     </header>
-
-    <!-- add offset value dynamically using the API -->
-    ISP
 
     <div class="attribution">
       Challenge by
