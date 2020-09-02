@@ -17,11 +17,18 @@
 /* Global Styling */
 body {
   font-family: var(--font-family-primary);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Header */
 header {
-  background-color: red;
+  background-color: rgb(64, 95, 235);
+  background-image: url("../images/pattern-bg.png");
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 90px;
+  position: relative;
 }
 
 h1 {
@@ -47,9 +54,11 @@ h1 {
   flex-grow: 1;
   border-bottom-left-radius: 0.8rem;
   border-top-left-radius: 0.8rem;
-  color: var(--gray-dark);
-  font-weight: var(--font-weight-medium);
+  color: var(--gray-darkest);
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-light);
   font-size: var(--text-input-size);
+  outline: none;
 }
 
 #search button {
@@ -58,16 +67,42 @@ h1 {
   background-color: black;
   border-top-right-radius: 0.8rem;
   border-bottom-right-radius: 0.8rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Main Section */
+main {
+  height: 100px;
+  width: 100%;
+}
+
+.abs {
+  position: absolute;
+  left: 50%;
+  width: 78%;
+}
+
+/* LeafletJS Map API Display */
+#mapid {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
 }
 
 /* API Info Display */
 .container {
+  position: relative;
   background-color: white;
-  width: 78%;
+  /* width: 78%; */
   min-height: 50px;
   padding: 20px 0;
   border-radius: 1rem;
-  margin: 0 auto;
+  left: -50%;
+  margin-top: -60px;
+  box-shadow: 0 3px 10px 8px rgba(68, 68, 68, 0.109);
 }
 
 .container ul {
@@ -99,20 +134,31 @@ h1 {
   color: var(--grey-darkest);
   font-weight: var(--font-weight-medium);
   font-size: 22px;
+  line-height: 28px;
+  width: 70%;
 }
 
 /* Responsive Media Queries */
 @media only screen and (max-width: 375px) {
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
+  header {
+    padding-bottom: 180px;
+  }
+
   #search {
     max-width: 90%;
+    padding-top: 10px;
+  }
+
+  .abs {
+    width: 60%;
   }
 
   .container {
-    padding: 0;
-    width: 90%;
+    padding: 0 10px;
+    margin-top: -170px;
   }
 
   .container ul {
@@ -136,6 +182,13 @@ h1 {
 
   .container p {
     font-size: 20px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .abs {
+    width: 90%;
   }
 }
 

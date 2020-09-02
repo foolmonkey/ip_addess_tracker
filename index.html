@@ -23,6 +23,25 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="styles/reset.css" />
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+    <!-- LeafletJS API/styles -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -46,30 +65,33 @@
           <img src="images\icon-arrow.svg" alt="OK" />
         </button>
       </div>
-
-      <!-- API Info Display -->
-      <section class="container">
-        <ul>
-          <li>
-            <h2>IP Address</h2>
-            <p id="ip">192.212.174.101</p>
-          </li>
-          <li>
-            <h2>Location</h2>
-            <p id="location">Brooklyn, NY 10001</p>
-          </li>
-          <li>
-            <h2>Timezone</h2>
-            <p id="timezone">UTC -05:00</p>
-          </li>
-          <li>
-            <h2>ISP</h2>
-            <p id="isp">SpaceX Starlink</p>
-          </li>
-        </ul>
-      </section>
     </header>
 
+    <main>
+      <!-- API Info Display -->
+      <div class="abs">
+        <section class="container">
+          <ul>
+            <li>
+              <h2>IP Address</h2>
+              <p id="ip">192.212.174.101</p>
+            </li>
+            <li>
+              <h2>Location</h2>
+              <p id="location">Brooklyn, NY 10001</p>
+            </li>
+            <li>
+              <h2>Timezone</h2>
+              <p id="timezone">UTC -05:00</p>
+            </li>
+            <li>
+              <h2>ISP</h2>
+              <p id="isp">SpaceX Starlink</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
