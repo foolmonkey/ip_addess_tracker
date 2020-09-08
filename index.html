@@ -18,6 +18,12 @@
       rel="stylesheet"
     />
 
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/64486ec299.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Frontend Mentor | IP Address Tracker</title>
 
     <!-- Stylesheets -->
@@ -25,20 +31,20 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 
     <!-- LeafletJS API/styles -->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
 
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script
-      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
 
@@ -61,8 +67,9 @@
       <!-- Search Bar -->
       <div id="search">
         <input type="text" placeholder="Search for any IP address or domain" />
-        <button type="button">
-          <img src="images\icon-arrow.svg" alt="OK" />
+        <button id="search-button" type="button">
+          <img id="arrow" src="images\icon-arrow.svg" alt="OK" />
+          <i id="loading" class="hidden fas fa-circle-notch"></i>
         </button>
       </div>
     </header>
@@ -91,12 +98,15 @@
           </ul>
         </section>
       </div>
+
+      <div id="mapid"></div>
     </main>
+
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="github.com/foolmonkey">Andy Tran</a>.
     </div>
   </body>
 </html>
