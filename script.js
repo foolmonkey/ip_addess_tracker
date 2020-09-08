@@ -1,25 +1,37 @@
 async function getGeolocation(
-  ip = "8.8.8.8",
+  input = "8.8.8.8",
   api_key = "at_4UpFw3Ygze4CEMwjskAYkRQwau23h"
 ) {
-  const response = await fetch(
-    `https://geo.ipify.org/api/v1?apiKey=at_4UpFw3Ygze4CEMwjskAYkRQwau23h&ipAddress=${ip}`
-  );
+  let url = `https://geo.ipify.org/api/v1?apiKey=${api_key}`;
+  let errMessage;
+
+  // Check if query string is ip or domain
+  if (input.match(/[^0-9]/)) {
+    url += `&domain=${input}`;
+    errMessage = "domain";
+  } else {
+    url += `&ipAddress=${input}`;
+    errMessage = "IP";
+  }
+
+  // Fetch from API
+  const response = await fetch(url);
   let data;
 
+  // Get JSON or throw exception
   try {
     data = await response.json();
   } catch (e) {
-    alert("Please enter a valid IP address.");
+    alert(`Please enter a valid ${errMessage}`);
     toggleLoading(true);
     return "";
   }
 
   if (!response.ok) {
-    alert("Please enter a valid IP address.");
+    alert(`Please enter a valid ${errMessage}.`);
     data = "";
     toggleLoading(true);
-    throw new Error("Please enter a valid IP address.");
+    throw new Error(`Please enter a valid ${errMessage}.`);
   }
 
   return data;
@@ -52,11 +64,11 @@ function toggleLoading(finished) {
   }
 }
 
-async function render(ip) {
-  toggleLoading();
-  let data = await getGeolocation(ip);
+async function render(input) {
+  toggleLoading(false);
+  let data = await getGeolocation(input);
+  toggleLoading(true);
   renderGeolocation(data);
-  toggleLoading();
 }
 
 window.onload = () => {

@@ -81,7 +81,7 @@ main {
 }
 
 .abs {
-  position: relative;
+  position: absolute;
   left: 50%;
   width: 78%;
 }
