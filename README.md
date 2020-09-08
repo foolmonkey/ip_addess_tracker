@@ -7,3 +7,5 @@ It uses a geolocation API from Ipify to gather the 'tracker' data, and also supp
 -------
 
 View live at: https://foolmonkey.github.io/ip_address_tracker/
+
+![](ip-demonstration.gif)
