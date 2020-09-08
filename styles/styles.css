@@ -19,6 +19,7 @@ body {
   font-family: var(--font-family-primary);
   position: relative;
   overflow: hidden;
+  max-width: 100%;
 }
 
 /* Header */

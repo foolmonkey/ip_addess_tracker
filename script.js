@@ -11,12 +11,14 @@ async function getGeolocation(
     data = await response.json();
   } catch (e) {
     alert("Please enter a valid IP address.");
+    toggleLoading(true);
     return "";
   }
 
   if (!response.ok) {
     alert("Please enter a valid IP address.");
     data = "";
+    toggleLoading(true);
     throw new Error("Please enter a valid IP address.");
   }
 
@@ -34,12 +36,12 @@ function renderGeolocation(data) {
   }
 }
 
-function toggleLoading() {
+function toggleLoading(finished) {
   let loading = document.getElementById("loading");
   let arrow = document.getElementById("arrow");
   let button = document.getElementById("search-button");
 
-  if (loading.classList.contains("hidden")) {
+  if (loading.classList.contains("hidden") || !finished) {
     loading.classList.remove("hidden");
     arrow.classList.add("hidden");
     button.style.cursor = "not-allowed";
