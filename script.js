@@ -45,6 +45,8 @@ function renderGeolocation(data) {
     ).innerText = `${data.location.city}, ${data.location.region}, ${data.location.country}`;
     document.getElementById("timezone").innerText = data.location.timezone;
     document.getElementById("isp").innerText = data.isp;
+
+    setMap(data.location.lat, data.location.lng);
   }
 }
 
@@ -71,9 +73,31 @@ async function render(input) {
   renderGeolocation(data);
 }
 
+function setMap(lat, lng) {
+  document.getElementById("map").innerHTML = `<div id="mapid"></div>`;
+
+  var myMap = L.map("mapid", { zoomControl: false }).setView([lat, lng], 13);
+
+  L.tileLayer(
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+    {
+      maxZoom: 18,
+      attribution:
+        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      id: "mapbox/streets-v11",
+      tileSize: 512,
+      zoomOffset: -1,
+    }
+  ).addTo(myMap);
+}
+
 window.onload = () => {
   let search = document.getElementsByTagName("input")[0];
   let submit = document.getElementsByTagName("button")[0];
+
+  setMap(51, 13);
 
   submit.addEventListener("click", () => {
     if (search.value.length > 0) {

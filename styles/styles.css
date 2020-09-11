@@ -19,7 +19,20 @@ body {
   font-family: var(--font-family-primary);
   position: relative;
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
+}
+
+/* LeafletJS Map API Display */
+#map {
+  width: 100%;
+  height: 70vh;
+  position: absolute;
+}
+
+#mapid {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 /* Header */
@@ -76,32 +89,29 @@ h1 {
 
 /* Main Section */
 main {
-  height: 100px;
   width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
 }
 
 .abs {
-  position: absolute;
-  left: 50%;
-  width: 78%;
-}
-
-/* LeafletJS Map API Display */
-#mapid {
-  height: 100px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* API Info Display */
 .container {
-  position: relative;
+  position: absolute;
   background-color: white;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  min-height: 50px;
   padding: 20px 0;
   border-radius: 1rem;
-  left: -50%;
+  width: 78%;
   margin-top: -60px;
   box-shadow: 0 3px 10px 8px rgba(68, 68, 68, 0.109);
 }
@@ -110,6 +120,7 @@ main {
   display: flex;
   width: 100%;
   height: 100%;
+  padding: 10px 5px;
   box-sizing: border-box;
 }
 
@@ -165,6 +176,7 @@ main {
   visibility: hidden;
 }
 
+/* Loading Animation */
 @-webkit-keyframes loading {
   to {
     transform: rotate(1turn);
@@ -183,7 +195,7 @@ main {
 @media only screen and (max-width: 375px) {
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1150px) {
   header {
     padding-bottom: 180px;
   }
@@ -193,12 +205,8 @@ main {
     padding-top: 10px;
   }
 
-  .abs {
-    width: 60%;
-  }
-
   .container {
-    padding: 0 10px;
+    width: 60%;
     margin-top: -170px;
   }
 
@@ -225,11 +233,19 @@ main {
     font-size: 20px;
     width: 100%;
   }
+
+  #map {
+    height: 57vh;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .abs {
+  .container {
     width: 90%;
+  }
+
+  #map {
+    height: 57vh;
   }
 }
 
