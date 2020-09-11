@@ -5,7 +5,7 @@
   --gray-dark: hsl(0, 0%, 59%);
 
   /* Text Size */
-  --text-input-size: 18px;
+  --text-input-size: 1.2rem;
 
   /* Font Family/Weights */
   --font-family-primary: "Rubik", Arial, Helvetica, sans-serif;
@@ -18,9 +18,8 @@
 body {
   font-family: var(--font-family-primary);
   position: relative;
-  overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: 99vh;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -49,7 +48,7 @@ header {
 
 h1 {
   font-weight: var(--font-weight-medium);
-  font-size: 28px;
+  font-size: 1.8rem;
   text-align: center;
   padding-top: 25px;
   color: white;
@@ -92,7 +91,6 @@ h1 {
 /* Main Section */
 main {
   width: 100%;
-  height: 100%;
   position: absolute;
   z-index: 3;
 }
@@ -139,7 +137,7 @@ main {
 .container h2 {
   color: var(--gray-dark);
   font-weight: var(--font-weight-heavy);
-  font-size: 14px;
+  font-size: 1em;
   font-variant: all-small-caps;
   padding-bottom: 10px;
 }
@@ -147,7 +145,7 @@ main {
 .container p {
   color: var(--grey-darkest);
   font-weight: var(--font-weight-medium);
-  font-size: 22px;
+  font-size: 1.5em;
   line-height: 28px;
   width: 70%;
 }
@@ -232,7 +230,7 @@ main {
   }
 
   .container p {
-    font-size: 20px;
+    font-size: 1.4em;
     width: 100%;
   }
 }
@@ -241,7 +239,4 @@ main {
   .container {
     width: 90%;
   }
-}
-
-@media only screen and (max-width: 1440px) {
 }

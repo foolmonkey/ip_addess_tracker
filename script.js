@@ -38,6 +38,8 @@ async function getGeolocation(
 }
 
 function renderGeolocation(data) {
+  toggleLoading(true);
+
   if (data !== "") {
     document.getElementById("ip").innerText = data.ip;
     document.getElementById(
@@ -55,7 +57,7 @@ function toggleLoading(finished) {
   let arrow = document.getElementById("arrow");
   let button = document.getElementById("search-button");
 
-  if (loading.classList.contains("hidden") || !finished) {
+  if (!finished) {
     loading.classList.remove("hidden");
     arrow.classList.add("hidden");
     button.style.cursor = "not-allowed";
@@ -69,7 +71,6 @@ function toggleLoading(finished) {
 async function render(input) {
   toggleLoading(false);
   let data = await getGeolocation(input);
-  toggleLoading(true);
   renderGeolocation(data);
 }
 
@@ -116,4 +117,6 @@ window.onload = () => {
       render(search.value);
     }
   });
+
+  render("192.212.174.101");
 };
