@@ -60,45 +60,50 @@
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <h1>IP Address Tracker</h1>
+    <div>
+      <!-- Header -->
+      <header>
+        <h1>IP Address Tracker</h1>
 
-      <!-- Search Bar -->
-      <div id="search">
-        <input type="text" placeholder="Search for any IP address or domain" />
-        <button id="search-button" type="button">
-          <img id="arrow" src="images\icon-arrow.svg" alt="OK" />
-          <i id="loading" class="hidden fas fa-circle-notch"></i>
-        </button>
-      </div>
-    </header>
+        <!-- Search Bar -->
+        <div id="search">
+          <input
+            type="text"
+            placeholder="Search for any IP address or domain"
+          />
+          <button id="search-button" type="button">
+            <img id="arrow" src="images\icon-arrow.svg" alt="OK" />
+            <i id="loading" class="hidden fas fa-circle-notch"></i>
+          </button>
+        </div>
+      </header>
 
-    <main>
-      <!-- API Info Display -->
-      <div class="abs">
-        <section class="container">
-          <ul>
-            <li>
-              <h2>IP Address</h2>
-              <p id="ip">192.212.174.101</p>
-            </li>
-            <li>
-              <h2>Location</h2>
-              <p id="location">Brooklyn, NY 10001</p>
-            </li>
-            <li>
-              <h2>Timezone</h2>
-              <p id="timezone">UTC -05:00</p>
-            </li>
-            <li>
-              <h2>ISP</h2>
-              <p id="isp">SpaceX Starlink</p>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
+      <main>
+        <!-- API Info Display -->
+        <div class="abs">
+          <section class="container">
+            <ul>
+              <li>
+                <h2>IP Address</h2>
+                <p id="ip">192.212.174.101</p>
+              </li>
+              <li>
+                <h2>Location</h2>
+                <p id="location">Brooklyn, NY 10001</p>
+              </li>
+              <li>
+                <h2>Timezone</h2>
+                <p id="timezone">UTC -05:00</p>
+              </li>
+              <li>
+                <h2>ISP</h2>
+                <p id="isp">SpaceX Starlink</p>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
 
     <div id="map">
       <div id="mapid"></div>
