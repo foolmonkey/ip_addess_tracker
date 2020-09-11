@@ -91,6 +91,12 @@ function setMap(lat, lng) {
       zoomOffset: -1,
     }
   ).addTo(myMap);
+
+  let icon = L.icon({
+    iconUrl: "./images/icon-location.svg",
+  });
+
+  let marker = L.marker([lat, lng], { icon: icon }).addTo(myMap);
 }
 
 window.onload = () => {
