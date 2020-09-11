@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
 
     <!-- Scripts -->
-    <script type="text/javascript" src="script.js"></script>
+    <script src="script.js"></script>
 
     <!-- LeafletJS API/styles -->
     <link
@@ -66,16 +66,18 @@
         <h1>IP Address Tracker</h1>
 
         <!-- Search Bar -->
-        <div id="search">
+        <form id="search">
           <input
             type="text"
+            title="searchinput"
+            name="searchinput"
             placeholder="Search for any IP address or domain"
           />
           <button id="search-button" type="button">
-            <img id="arrow" src="images\icon-arrow.svg" alt="OK" />
+            <img id="arrow" src="images/icon-arrow.svg" alt="OK" />
             <i id="loading" class="hidden fas fa-circle-notch"></i>
           </button>
-        </div>
+        </form>
       </header>
 
       <main>
@@ -105,9 +107,9 @@
       </main>
     </div>
 
-    <div id="map">
+    <section id="map">
       <div id="mapid"></div>
-    </div>
+    </section>
 
     <div class="attribution">
       Challenge by
