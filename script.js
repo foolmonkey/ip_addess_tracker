@@ -2,6 +2,8 @@ async function getGeolocation(
   input = "8.8.8.8",
   api_key = "at_4UpFw3Ygze4CEMwjskAYkRQwau23h"
 ) {
+  toggleLoading(true);
+
   let url = `https://geo.ipify.org/api/v1?apiKey=${api_key}`;
   let errMessage;
 
@@ -22,15 +24,15 @@ async function getGeolocation(
   try {
     data = await response.json();
   } catch (e) {
-    alert(`Please enter a valid ${errMessage}`);
     toggleLoading(true);
+    alert(`Please enter a valid ${errMessage}`);
     return "";
   }
 
   if (!response.ok) {
+    toggleLoading(true);
     alert(`Please enter a valid ${errMessage}.`);
     data = "";
-    toggleLoading(true);
     throw new Error(`Please enter a valid ${errMessage}.`);
   }
 
